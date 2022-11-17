@@ -1,7 +1,7 @@
 # Capstone - Travel Recommender (WanderLust)
 
 ## Notebook 1 of 4
-- Notebook 1: Introduction, Scraping
+- **Notebook 1: Introduction, Scraping**
 - Notebook 2: Combining Datasets, Data Cleaning, EDA and Base Model
 - Notebook 3: NLP (Sentiment Analysis), Feature Engineering + EDA + Model(With Feature Engineering) Conclusion + Recommendations
 - Notebook 4: Google Cloud + Streamlit
