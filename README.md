@@ -32,7 +32,7 @@ What’s interesting is that this might include activities that user might not h
 1. Description of the activity
 2. Duration of the activity
 3. URL of images
-- The scraping file is saved as 'durationdescriptionimages.csv' and will be added to the other datasets in Notebook 2.
+- The scraping file is saved as `durationdescriptionimages.csv` and will be added to the other datasets in Notebook 2.
 
 ## Notebook 2 of 4
 - Notebook 1: Introduction, Scraping
@@ -70,7 +70,7 @@ What’s interesting is that this might include activities that user might not h
 
 ## Import Data and Merging all the csv files 
 - `attractions`, `reviews`, `categories` + Data Cleaning
-- Activites that were not within country 'Canada' and 'United States' were dropped since the focus is on Canada or trips that will visit Canada 
+- Activites that were not within country `Canada` and `United States` were dropped since the focus is on Canada or trips that will visit Canada 
 - Only trips that would involve going to or from Canada will be kept.
 - 'att_w_review' dataframe was exported to excel for re-labelling of all attraction/activities's categories.
 
@@ -132,13 +132,14 @@ What’s interesting is that this might include activities that user might not h
 3. `Activities` and `Alcohol` are generic category, thus these shall be removed.
 
 - The final categories that were used in the dataset `final_att_data` are as per the table below.
+
 |Category|Description|
 |----|----|
 |Accommodation|Activites that include accommodation|
 |Adventure|Ziplining, Rafting, Snowshoeing and more|
 |Air Tour|Tour in the Air with Guide|
 |Beach|Visiting a Beach|
-|Brewery/ Distillery/Winery|Visiting Brewery/Distillery/Winery|
+|Brewery/Distillery/Winery|Visiting Brewery/Distillery/Winery|
 |Camping|Activites that involves camping|
 |Classes & Workshops|Activities that involves an instructor|
 |Entertainment|Live entertainment (excluding live commentary)/watching or hearing somethng|
@@ -158,7 +159,6 @@ What’s interesting is that this might include activities that user might not h
 |Sightseeing|Visting places of Interest|
 |Unique Experience|Experience an activity/do something "extra-ordinary"|
 |Wildlife Spotting|Sealife spotting, Bird Watching, etc..|
-
 
 - Through the count of categories of all activities:
 - Most of the activites are land tour and sightseeing
@@ -228,11 +228,11 @@ E.g. Lowest score = 0.5 (e.g. rating = 1, sentiment score = 0.5)
 - The rating, sentiment analysis, rating*sentiment value are heavily left-skewed.
 - The mean of all reviews of all Activities are centered around between 9 to 10.
 - The median of all reviews all Activities are centered around 10.
-- Impute the median 'rating_senti' value to the attractions without any reviews
+- Impute the median `rating_senti` value to the attractions without any reviews
 - Perform a minmax scaler on the column `rating_senti`
 
 - The attraction similarity values between this model and the base model looks largely similar.  
-- This is because  a large number of activities do not have ratings and reviews yet. Given the left-skewed distribution, the median value of ratings was imputed to activities without user ratings. This results in most of the attractions having a rating of (9.794), hence there is not much of a significant difference between the attraction similarity values between the models.  However, overtime with more reviews added to the database, the results would differ more.
+- This is because  a large number of activities do not have ratings and reviews yet. Given the left-skewed distribution, the median value of ratings was imputed to activities without user ratings. This results in most of the attractions having a `rating_senti` of (9.794), hence there is not much of a significant difference between the attraction similarity values between the models.  However, overtime with more reviews added to the database, the results would differ more.
 - A second survey was conducted across 15 person which saw 12 people having a good recommendation. This is an 11.25% increase in the performance.
 
 - In Notebook 4: The pickle file `att_canada_ratesen.pkl` will be the model that is being deployed on streamlit.
@@ -244,7 +244,7 @@ E.g. Lowest score = 0.5 (e.g. rating = 1, sentiment score = 0.5)
 - **Notebook 4: Google Cloud + Streamlit**
 
 ## Conclusion
-- Even without selecting which country to plan to go, the Travel Recommender System is able recommend a list of things that a user is likely to enjoy, based on what (5 things) they like to do when they travel and how important it is to do a genre of activity when overseas. 
+- Even without selecting which country to plan to go, the Travel Recommender System is able to recommend a list of things that a user is likely to enjoy, based on what (5 things) they like to do when they travel and how important it is to do a genre of activity when overseas. 
 - Through conducting the survey to test the 1st model, it is able to correctly recommend approximately 11 of 16 times.
 - On the 2nd model testing, it is able to correctly recommend 12 of 15 times which is 11.25% increase in the performance.
 - However, this is still based on a small scale testing which can be further expanded to get a true reading of the performance of the recommender model.
@@ -259,7 +259,7 @@ E.g. Lowest score = 0.5 (e.g. rating = 1, sentiment score = 0.5)
 1. Feature Engineering: Rating * Sentiments 
 - Sentiments: The chosen pre-trained NLP Model cardiffnlp/twitter-roberta-base-sentiment has taken into account of the user sentiments based on their reviews which has been mapped with 0.5 for Negative, 1 for Neutral and 2 for Positive.
 - The idea of having this feature is incorporate within the model and eliminate the need for user to read on reviews to make sure that the recommended activity is a highly rated & reviewed activity.
-2. Despite this model having quite similar recommendations with the base model, overtime with more reviews added to the database, the results would differ more. Since a large number of activities do not have ratings and reviews yet. Given the left-skewed distribution, the median value of ratings was imputed to activities without user ratings. This results in most of the attractions having a rating of (9.794), hence there is not much of a significant difference between the attraction similarity values between the models.
+2. Despite this model having quite similar recommendations with the base model, overtime with more reviews added to the database, the results would differ more. Since a large number of activities do not have ratings and reviews yet. Given the left-skewed distribution, the median value of ratings was imputed to activities without user ratings. This results in most of the attractions having a `rating_senti` of (9.794), hence there is not much of a significant difference between the attraction similarity values between the models.
 
 ## Limitations:
 - As the user reviews and ratings have been more established, usage of other hybrid model that would be able to filter out attractions/activities that has been lowly rated.
